@@ -5,8 +5,13 @@ edition = "2024"
 
 [dependencies]
 embassy-executor = { version = "0.10.0", features = ["platform-cortex-m", "executor-thread"] }
-embassy-rp = { version = "0.10.0", features = ["rp2040", "time-driver", "critical-section-impl"] }
+embassy-rp = { version = "0.10.0", features = ["rp2040", "time-driver", "critical-section-impl", "unstable-pac"] }
 embassy-time = "0.5.1"
+embassy-net = { version = "0.9.1", features = ["tcp", "dhcpv4", "medium-ethernet", "proto-ipv4"] }
+cyw43 = "0.7.0"
+cyw43-pio = "0.10.0"
+static_cell = "2.1"
 cortex-m = { version = "0.7.7", features = ["inline-asm"] }
 cortex-m-rt = "0.7.5"
 panic-halt = "1.0.0"
+portable-atomic = { version = "1", features = ["critical-section"] }
